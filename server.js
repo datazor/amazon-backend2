@@ -40,10 +40,9 @@ app.use(express.json())
   next();
 });*/
 
-app.get('/',(req,res =>{
-
+app.get('/',(req,res) =>{
   res.send('Server running !')
-}))
+})
 
 
 
@@ -87,7 +86,7 @@ app.post('/api/login' , async (req,res)=>{
     password: req.body.password,
   })
 
- 
+
 
   if(loger){
 
