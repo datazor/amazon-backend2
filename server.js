@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
@@ -6,9 +6,6 @@ import user from './models/user.models.js';
 import jwt from 'jsonwebtoken';
 
 const app = express() 
-
-dotenv.config('./config')
-
 
 
 mongoose.connect('mongodb+srv://tejmakht:tejmakhtonrails007@cluster0.aiotyik.mongodb.net/UserBB?retryWrites=true&w=majority',{
@@ -26,7 +23,7 @@ mongoose.connect('mongodb+srv://tejmakht:tejmakhtonrails007@cluster0.aiotyik.mon
 app.use(cors())     
 app.use(express.json())
 
-app.use(function (req, res, next) {
+/*app.use(function (req, res, next) {
 
 
   res.setHeader('Access-Control-Allow-Origin', 'https://phenomenal-salmiakki-bb7628.netlify.app/');
@@ -41,7 +38,12 @@ app.use(function (req, res, next) {
 
 
   next();
-});
+});*/
+
+app.get('/',(req,res =>{
+
+  res.send('Server running !')
+}))
 
 
 
@@ -126,7 +128,7 @@ app.post('/api/savebasket' , async (req,res)=>{
 
 
 
-app.listen(1337,()=>{
+app.listen(process.env.PORT||1337,()=>{
 
     console.log('Server started on 1337')
 })

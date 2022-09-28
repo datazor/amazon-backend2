@@ -5,11 +5,11 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": { 
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "json-web-token": "^3.2.0",
